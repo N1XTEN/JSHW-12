@@ -1,7 +1,7 @@
 import axios from 'axios';
 const API_KEY = 'YOUR_PIXABAY_API_KEY';
 const API_URL = 'https://pixabay.com/api/';
-const PER_PAGE = 15;
+const PER_PAGE = 40;  
 
 export async function fetchData(userInput, page, perPage) {
   try {

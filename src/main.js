@@ -10,7 +10,7 @@ const loader = document.querySelector('.loader');
 const gallery = document.querySelector('.gallery');
 const loadMoreBtn = document.querySelector('.load-btn');
 let page;
-let perPage = 15;
+let perPage = 40;
 let userInput = '';
 let lightbox;
 
@@ -64,6 +64,9 @@ async function loadMoreImages() {
     smoothScroll();
     if (page * perPage >= data.totalHits) {
       showEndMessage();
+    }
+    if (gallery.querySelectorAll('.gallery-item').length >= data.totalHits) {
+      loadMoreBtn.classList.add('hidden');
     }
   } catch (error) {
     console.error('Error fetching data:', error);
